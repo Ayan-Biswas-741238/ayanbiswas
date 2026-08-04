@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Ayan Biswas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><span class="logo-star">✦</span> Ayan Biswas</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="interests.html" class="nav-link">Interests</a></li>
+                <li><a href="app.html" class="nav-link">App</a></li>
+                <li><a href="contact.html" class="nav-contact-btn" style="box-shadow: none;">📬 Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section section-page-top">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2>📸 My Gallery</h2>
+            <p>Click any photo to view full size</p>
+        </div>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="switchTab('personal',this)"><i class="fas fa-camera-retro"></i> Personal</button>
+            <button class="tab-btn" onclick="switchTab('published',this)"><i class="fas fa-feather-alt"></i> Published</button>
+            <button class="tab-btn" onclick="switchTab('favorites',this)"><i class="fas fa-star"></i> Favorites</button>
+        </div>
+
+        <div class="gallery-panel active" id="tab-personal">
+            <div class="gallery-grid" id="grid-personal"></div>
+        </div>
+        <div class="gallery-panel" id="tab-published">
+            <div class="gallery-grid" id="grid-published"></div>
+        </div>
+        <div class="gallery-panel" id="tab-favorites">
+            <div class="gallery-grid" id="grid-favorites"></div>
+        </div>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Lightbox" id="lightbox-img">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+
+    <footer class="footer">
+        <p>Made with <span class="heart">❤️</span> by <span class="brand">Ayan Biswas</span> &bull; &copy; 2026</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
