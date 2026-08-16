@@ -165,3 +165,25 @@ function closeLightbox(){
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeLightbox();});
 window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10); });
 document.addEventListener('DOMContentLoaded', initFromSheet);
+
+// ========== HAMBURGER MENU TOGGLE ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle Icon between Bars and Cross (X)
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+});
