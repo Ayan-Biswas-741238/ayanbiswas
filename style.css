@@ -166,17 +166,63 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .footer .brand{color:var(--primary);font-weight:600}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 
-/* ============ RESPONSIVE ============ */
+/* ============ HAMBURGER ICON (Hidden on Desktop) ============ */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
 @media(max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:30px}
     .info-card{position:static}
     .recent-card{width:140px}
 }
-@media(max-width:640px){
-    .nav-inner{flex-direction:column;gap:8px;padding:10px 16px}
-    .nav-menu{gap:2px;justify-content:center}
-    .nav-link{font-size:0.78rem;padding:6px 10px}
-    .nav-contact-btn{padding:8px 18px!important;font-size:0.8rem;margin-left:4px}
+
+@media(max-width: 768px) {
+    /* Navbar styling for Mobile */
+    .nav-inner {
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    }
+    .nav-menu.active {
+        display: flex;
+        animation: fadeSlideIn 0.3s ease forwards;
+    }
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .nav-link {
+        display: block;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    .nav-contact-btn {
+        margin-left: 0;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    /* Section styling for Mobile */
     .hero{padding:115px 18px 50px}
     .hero h1{font-size:2rem}
     .hero-avatar{width:125px;height:125px}
@@ -196,4 +242,10 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
     .social-icon-link{width:46px;height:46px;font-size:1.1rem}
     .social-icons{gap:12px}
     .social-pill{padding:10px 18px;font-size:0.8rem}
+}
+
+@media(max-width:380px){
+    .recent-card{width:120px}
+    .gallery-grid{grid-template-columns:1fr 1fr;gap:8px}
+    .social-pills-row{flex-direction:column;align-items:center}
 }
